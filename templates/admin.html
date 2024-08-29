@@ -24,23 +24,23 @@
         <!--ВЫБОР ЧТО ДОБАВЛЯТЬ-->
         <div class="combobox"> <!--Первый ряд-->
             <label for="peaceful_skill_radio">Мирный навык</label>
-            <input name="peaceful_skill_radio" onclick="peaceful_skill_form()" type="radio">
+            <input onclick="radio('peaceful_skill')" class="radio" name="peaceful_skill_radio" onclick="peaceful_skill_form()" type="radio">
 
             <label for="skill_radio">Боевой навык</label>
-            <input name="skill_radio" onclick="skill_form()" type="radio">
+            <input onclick="radio('skill')" class="radio" name="skill_radio" type="radio">
         </div>
         <div class="combobox"><!--Второй ряд-->
             <label for="spells_radio">Заклинание</label>
-            <input name="spells_radio" onclick="spell_form()" type="radio">
+            <input onclick="radio('spell')" class="radio" name="spells_radio" onclick="spell_form()" type="radio">
 
             <label for="armor_radio">Броня</label>
-            <input name="armor_radio" onclick="armor_form()" type="radio">
+            <input onclick="radio('armor')" class="radio" name="armor_radio" onclick="armor_form()" type="radio">
 
             <label for="item_radio">Предмет</label>
-            <input name="item_radio" onclick="item_form()" type="radio">
+            <input onclick="radio('item')" class="radio" name="item_radio" onclick="item_form()" type="radio">
         </div>
         <!--КОНЕЦ ВЫБОРА-->
-
+        <div id="cleaner">
         <!--ПОЛЯ ДЛЯ ДОБАВЛЕНИЯ ЗАКЛИНАНИЯ-->
         <label class="spell" for="spell_name">Название заклинания</label>
         <input placeholder="Заклинание" class="spell" name="spell_name" type="text">
@@ -108,11 +108,13 @@
         <label class="item" for="item_cost">Цена предмета</label>
         <input placeholder="Цена предмета" class="item" name="item_cost" type="number">
 
-        <label class="itemr" for="item_weight">Вес Предмета</label>
+        <label class="item" for="item_weight">Вес Предмета</label>
         <input placeholder="Предмета брони" class="item" name="item_weight" type="number">
 <!-- Конец поля для ввода -->
         <input type="submit" value="Добавить" id="submit" name="submit">
+    </div>
     </form>
+    
     {% endif %}
 
     {% if (form == "edit") %}
@@ -122,5 +124,6 @@
     {% if (form == "delete") %}
     <p>Форма удаления</p>
     {% endif %}
+    <script src="/static/scripts/formSwitch.js"></script>
 </body>
 </html>
